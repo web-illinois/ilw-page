@@ -8,7 +8,9 @@ The version 2 equivalent is the il-page and the "il-formatted" class.
 
 The ilw-page is intended to hold other components. 
 
-The ilw-page will manage margins appropriately for any component or block that isn't marked with the ilw-width-full class or that isn't flagged as normally full width (il-content, il-hero, il-page-title). 
+The ilw-page will manage margins appropriately for any component or block that isn't marked with the ilw-width-full class or that isn't flagged as normally full width (examples: ilw-hero, ilw-page-title). 
+
+The ilw-page will not manage margins for the header and footer slots. 
 
 Attributes include:
 
