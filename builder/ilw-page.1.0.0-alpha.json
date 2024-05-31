@@ -1,0 +1,25 @@
+{
+    "title": "Page",
+    "tag": "ilw-page",
+	"github": "https://github.com/web-illinois/ilw-page/",
+    "type": "web component",
+    "element-name": "ilw-page",
+	"description": "The Page component, containing styles and margins for other components.",
+	"version": "1.0.0-alpha",
+	"date": "5/31/2024",
+	"css": "",
+	"js": "",
+	"production": false,
+    "notes": "",
+	"parent-style": "",
+	"samples": [
+	],
+	"attributes-fixed": [],
+	"attributes-text": [],
+	"attributes": [
+	],
+	"classes-fixed": [],
+	"classes": [],
+	"css-variables": [
+	]
+}
