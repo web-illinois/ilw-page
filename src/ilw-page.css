@@ -1,0 +1,85 @@
+:root {
+    --ilw-page--main-margin-top: 30px;
+    --ilw-page--main-margin-bottom: 30px;
+    --ilw-page--main-margin: 0 max(1.875rem, calc(50cqw - 37.5rem)) 0;
+}
+
+html {
+  font-size: 16px;
+  line-height: 21px;
+}
+
+ilw-page[illinois] p, ilw-page[illinois] caption, ilw-page[illinois] blockquote {
+    display: block;
+    font: 400 1.125rem/1.667rem var(--il-font-sans);
+    color: inherit;
+    margin-top: 1.2rem;
+    margin-bottom: 0;
+  }
+  ilw-page[illinois] b, ilw-page[illinois] strong {
+    font-weight: 700;
+  }
+  ilw-page[illinois] i, ilw-page[illinois] em {
+    font-style: italic;
+  }
+  ilw-page[illinois] a {
+    color: var(--ilw-link--color);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  ilw-page[illinois] a:hover, ilw-page[illinois] a:focus {
+    color: var(--ilw-link--color-focus);
+  }
+  ilw-page[illinois] a:focus {
+    outline: var(--ilw-link--outline-focus); 
+  }
+  ilw-page[illinois] a:visited {
+    color: var(--ilw-link--color-visited);
+  }
+
+  ilw-page[illinois] h1, ilw-page[illinois] h2, ilw-page[illinois] h3, 
+  ilw-page[illinois] h4, ilw-page[illinois] h5, ilw-page[illinois] h6 {
+    display: block;
+    color: inherit;
+    line-height: 1.2;
+    font-style: normal;
+    font-weight: 700;
+    font-family: var(--il-font-sans);
+    color: var(--ilw-heading--color);
+    margin-top: 1.8rem;
+    margin-bottom: 0;
+  }
+  ilw-page[illinois] h1 {
+    font-size: 4.25rem;
+    line-height: 5.25rem;
+    margin-top: 1.3125rem;
+    margin-bottom: 2.625rem;
+    font-family: var(--il-font-heading);
+  }
+  ilw-page[illinois] h2 {
+    font-size: 2.625rem;
+    line-height: 2.625rem;
+    margin-top: 1.3125rem;
+    margin-bottom: 1.3125rem;
+  }
+  ilw-page[illinois] h3 {
+    font-size: 1.625rem;
+    line-height: 2.625rem;
+    margin-top: 1.3125rem;
+    margin-bottom: 1.3125rem;
+  }
+  ilw-page[illinois] h4, ilw-page[illinois] h5, ilw-page[illinois] h6 {
+    font-size: 1.2rem;
+    line-height: 1.667rem;
+    margin-top: 1.3125rem;
+    margin-bottom: 0rem;
+    }
+
+  ilw-page[illinois] ul, ilw-page[illinois] ol {
+    margin-top: 1.2rem;
+    margin-bottom: 0;
+  }
+  ilw-page[illinois] li {
+    font: 400 1.125rem/1.667 var(--il-font-sans);
+    color: inherit;
+  }

@@ -14,10 +14,10 @@ The ilw-page will not manage margins for the header and footer slots.
 
 Attributes include:
 
-  * enforceTheme (boolean, see below)
-  * sidebar (left, right, off, see below)
+  * illinois - boolean, if the page uses the Illinois default branding
+  * expanded - boolean, if true, there will be margins between the unmarked slot and header/footer
 
-If *enforceTheme* is enabled, it will provide styling for the following HTML elements:
+If *illinois* is enabled, it will provide styling for the following HTML elements:
 
   * Paragraphs
   * Headings
@@ -27,10 +27,6 @@ If *enforceTheme* is enabled, it will provide styling for the following HTML ele
 Slots include
 
   * header
-  * first
-  * sidebar (in the below graphic, sidebar is set to left)
-  * (unnamed)
-  * last
   * footer
 
 
@@ -39,19 +35,10 @@ Slots include
 |                                 header                                |
 |_______________________________________________________________________|
 |                                                                       |
-|                                  first                                |
 |                                                                       |
-|_______________________________________________________________________|
-|           |                                                           |
-|           |                                                           |
-|           |                                                           |
-|  sidebar  |                    (unnamed)                              |
-|           |                                                           |
-|           |                                                           |
-|           |                                                           |
-|__________ | __________________________________________________________|
 |                                                                       |
-|                                  last                                 |
+|                                (unnamed)                              |
+|                                                                       |
 |                                                                       |
 |                                                                       |
 |_______________________________________________________________________|
@@ -60,10 +47,6 @@ Slots include
 |                                                                       |
 -------------------------------------------------------------------------
 ```
-
-If the sidebar attribute is set to none, then the sidebar slot will be ignored.
-
-There will be no margin changes between the "first", unnamed, and "last" slot. 
 
 ## Contact Team
 
@@ -88,15 +71,12 @@ None yet, still in alpha.
 ```
 
 ```
-<ilw-page enforceTheme="true" slot="left">
+<ilw-page illinois="true">
   <header slot="header"></header>
   <main>
-  <div slot="first">
    <ilw-breadcrumbs><ilw-breadcrumbs>
    <ilw-hero><ilw-hero>
-  <div>
-  <ilw-section-nav slot="sidebar"></ilw-section-nav>
-  <ilw-call-to-action slot="last"><ilw-call-to-action>
+   <ilw-call-to-action><ilw-call-to-action>
   </main>
   <footer slot="footer"></footer>
 </ilw-page>
@@ -110,4 +90,6 @@ Note that this does not change the body tag. You may need to manually add styles
 
 ## External references
 
-N/A
+https://www.nngroup.com/articles/golden-ratio-ui-design/
+https://gridlover.net/try
+
