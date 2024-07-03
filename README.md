@@ -8,7 +8,7 @@ The version 2 equivalent is the il-page and the "il-formatted" class.
 
 The ilw-page is intended to hold other components. 
 
-The ilw-page will manage margins appropriately for any component or block that isn't marked with the ilw-width-full class or that isn't flagged as normally full width (examples: ilw-hero, ilw-page-title). 
+The ilw-page will manage margins appropriately for any component or block that isn't marked with the ilw-width-full class. Some components are built specifically to allow to break these margins and go full width. 
 
 The ilw-page will not manage margins for the header and footer slots. 
 
@@ -86,7 +86,7 @@ None yet, still in alpha.
 
 Ensure that you are putting the slots in semantic order and that you are either using components that have semantic areas, or you are manually inserting semantic areas. 
 
-Note that this does not change the body tag. You may need to manually add styles to put the body margin and padding to 0. 
+Note that this does not change the body tag. You may need to manually add styles to set the body margin and padding to 0. 
 
 ## External references
 
