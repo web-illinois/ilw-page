@@ -8,7 +8,7 @@
 	"version": "0.9.0",
 	"date": "7/3/2024",
 	"css": "https://dev.toolkit.illinois.edu/ilw-page/0.9.0/ilw-page.css",
-	"js": "https://dev.toolkit.illinois.edu/ilw-page/0.9.0/ilw-page.css",
+	"js": "https://dev.toolkit.illinois.edu/ilw-page/0.9.0/ilw-page.js",
 	"production": false,
     "notes": "",
 	"parent-style": "",
