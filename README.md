@@ -12,12 +12,15 @@ The ilw-page will manage margins appropriately for any component or block that i
 
 The ilw-page will not manage margins for the header and footer slots. 
 
+The ilw-page elevates the header slot's z-index to 300 to allow dropdown menus to override any other items in the main slot. The main slot and footer slot do not have z-index set, and are assumed to be 0. 
+
 Attributes include:
 
-  * illinois - boolean, if the page uses the Illinois default branding
+  * font - boolean, if the page uses the Illinois default fonts
+  * illinois - boolean, if the page uses the Illinois default fonts and colors. 
   * expanded - boolean, if true, there will be margins between the unmarked slot and header/footer
 
-If *illinois* is enabled, it will provide styling for the following HTML elements:
+If *font* or *illinois* is enabled, it will provide styling for the following HTML elements in the main section:
 
   * Paragraphs
   * Headings
@@ -72,13 +75,13 @@ None yet, still in alpha.
 
 ```
 <ilw-page illinois="true">
-  <header slot="header"></header>
+  <il-header slot="header"></il-header>
   <main>
    <ilw-breadcrumbs><ilw-breadcrumbs>
    <ilw-hero><ilw-hero>
    <ilw-call-to-action><ilw-call-to-action>
   </main>
-  <footer slot="footer"></footer>
+  <il-footer slot="footer"></il-footer>
 </ilw-page>
 ```
 

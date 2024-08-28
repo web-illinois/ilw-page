@@ -15,6 +15,8 @@ export default css`
 
 .header {
     grid-area: head;
+    position: relative;
+    z-index: 300;
 }
 
 .footer {
