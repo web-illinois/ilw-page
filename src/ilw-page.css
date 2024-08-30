@@ -1,50 +1,55 @@
 :root {
-    --ilw-page--main-margin-top: 30px;
-    --ilw-page--main-margin-bottom: 30px;
-    --ilw-page--main-margin: 0 max(1.875rem, calc(50cqw - 37.5rem)) 0;
+  --ilw-page--main-margin-top: 30px;
+  --ilw-page--main-margin-bottom: 30px;
+  --ilw-page--main-margin: 0 max(1.875rem, calc(50cqw - 37.5rem)) 0;
+  --ilw-page--margin: 0;
 }
 
-ilw-page[font] h1 {
+ilw-page.ilw-margin {
+  --ilw-page--margin: var(--ilw-margin--side, max(1.875rem, calc(50cqw - 37.5rem)));
+}
+
+ilw-page.ilw-font h1 {
   font-family: var(--il-font-heading);
 }
 
-ilw-page[font] h2, ilw-page[font] h3, ilw-page[font] h4, ilw-page[font] p, ilw-page[font] li, 
-ilw-page[font] div, ilw-page[font] input, ilw-page[font] select, ilw-page[font] textarea, 
-ilw-page[font] summary, ilw-page[illinois] caption, ilw-page[illinois] blockquote {
+ilw-page.ilw-font h2, ilw-page.ilw-font h3, ilw-page.ilw-font h4, ilw-page.ilw-font p, ilw-page.ilw-font li, 
+ilw-page.ilw-font div, ilw-page.ilw-font input, ilw-page.ilw-font select, ilw-page.ilw-font textarea, 
+ilw-page.ilw-font summary, ilw-page.ilw-font caption, ilw-page.ilw-font blockquote {
   font-family: var(--il-font-sans);
 }
 
 @layer pageIllinois {
-  ilw-page[illinois] main p, ilw-page[illinois] main caption, ilw-page[illinois] main blockquote {
+  ilw-page.ilw-format main p, ilw-page.ilw-format main caption, ilw-page.ilw-format main blockquote {
     display: block;
     font: 400 1.125rem/1.667rem var(--il-font-sans);
     color: inherit;
     margin-top: 1.2rem;
     margin-bottom: 0;
   }
-  ilw-page[illinois] main b, ilw-page[illinois] main strong {
+  ilw-page.ilw-format main b, ilw-page.ilw-format main strong {
     font-weight: 700;
   }
-  ilw-page[illinois] main i, ilw-page[illinois] main em {
+  ilw-page.ilw-format main i, ilw-page.ilw-format main em {
     font-style: italic;
   }
-  ilw-page[illinois] main a {
+  ilw-page.ilw-format main a {
     color: var(--ilw-link--color);
     text-decoration: underline;
     cursor: pointer;
   }
-  ilw-page[illinois] main a:hover, ilw-page[illinois] main a:focus {
+  ilw-page.ilw-format main a:hover, ilw-page.ilw-format main a:focus {
     color: var(--ilw-link--color-focus);
   }
-  ilw-page[illinois] main a:focus {
+  ilw-page.ilw-format main a:focus {
     outline: var(--ilw-link--outline-focus); 
   }
-  ilw-page[illinois] main a:visited {
+  ilw-page.ilw-format main a:visited {
     color: var(--ilw-link--color-visited);
   }
   
-  ilw-page[illinois] main h1, ilw-page[illinois] main h2, ilw-page[illinois] main h3, 
-  ilw-page[illinois] main h4, ilw-page[illinois] main h5, ilw-page[illinois] main h6 {
+  ilw-page.ilw-format main h1, ilw-page.ilw-format main h2, ilw-page.ilw-format main h3, 
+  ilw-page.ilw-format main h4, ilw-page.ilw-format main h5, ilw-page.ilw-format main h6 {
     display: block;
     line-height: 1.2;
     font-style: normal;
@@ -54,37 +59,37 @@ ilw-page[font] summary, ilw-page[illinois] caption, ilw-page[illinois] blockquot
     margin-top: 1.8rem;
     margin-bottom: 0;
   }
-  ilw-page[illinois] main h1 {
+  ilw-page.ilw-format main h1 {
     font-size: 4.25rem;
     line-height: 5.25rem;
     margin-top: 1.3125rem;
     margin-bottom: 2.625rem;
     font-family: var(--il-font-heading);
   }
-  ilw-page[illinois] main h2 {
+  ilw-page.ilw-format main h2 {
     font-size: 2.625rem;
     line-height: 2.625rem;
     margin-top: 1.3125rem;
     margin-bottom: 1.3125rem;
   }
-  ilw-page[illinois] main h3 {
+  ilw-page.ilw-format main h3 {
     font-size: 1.625rem;
     line-height: 2.625rem;
     margin-top: 1.3125rem;
     margin-bottom: 1.3125rem;
   }
-  ilw-page[illinois] main h4, ilw-page[illinois] main h5, ilw-page[illinois] main h6 {
+  ilw-page.ilw-format main h4, ilw-page.ilw-format main h5, ilw-page.ilw-format main h6 {
     font-size: 1.2rem;
     line-height: 1.667rem;
     margin-top: 1.3125rem;
     margin-bottom: 0rem;
     }
   
-  ilw-page[illinois] main ul, ilw-page[illinois] main ol {
+  ilw-page.ilw-format main ul, ilw-page.ilw-format main ol {
     margin-top: 1.2rem;
     margin-bottom: 0;
   }
-  ilw-page[illinois] main li {
+  ilw-page.ilw-format main li {
     font: 400 1.125rem/1.667 var(--il-font-sans);
     color: inherit;
   }

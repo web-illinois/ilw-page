@@ -16,13 +16,16 @@ The ilw-page elevates the header slot's z-index to 300 to allow dropdown menus t
 
 Attributes include:
 
-  * font - boolean, if the page uses the Illinois default fonts
-  * illinois - boolean, if the page uses the Illinois default fonts and colors. 
   * expanded - boolean, if true, there will be margins between the unmarked slot and header/footer
 
-If *font* or *illinois* is enabled, it will provide styling for the following HTML elements in the main section:
+Classes include
 
-  * Paragraphs
+  * ilw-font - boolean, if the page uses the Illinois default fonts
+  * ilw-illinois - boolean, if the page uses the Illinois default fonts and colors. 
+  * ilw-margin - boolean, if the page uses the Illinois default fonts and colors.
+
+This will change:
+
   * Headings
   * Lists
   * Inline formatting, such as emphasis and hyperlinks

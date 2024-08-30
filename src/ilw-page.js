@@ -6,7 +6,6 @@ class Page extends LitElement {
 
   static get properties() {
     return {
-      illinois: { type: Boolean, attribute: true },
       expanded: { type: Boolean, attribute: true }
     };
   }
@@ -17,7 +16,6 @@ class Page extends LitElement {
 
   constructor() {
     super();
-    this.illinois = false;
     this.expanded = false;
   }
 

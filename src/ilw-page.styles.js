@@ -25,10 +25,11 @@ export default css`
 
 .main {
   grid-area: main;
-  margin: var(--ilw-page--main-margin, 0);
+  margin-left: var(--ilw-page--margin, 0);
+  margin-right: var(--ilw-page--margin, 0);
 }
 
-.main.add-top-margin {
+.main.add-margin {
   margin-top: var(--ilw-page--main-margin-top, 0);
   margin-bottom: var(--ilw-page--main-margin-bottom, 0);
 }

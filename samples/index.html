@@ -15,10 +15,29 @@
       background-color: #FFB6C1;
     }
   </style>
+  <script>
+    document.addEventListener("DOMContentLoaded", function(event) {
+      const params = new URLSearchParams(window.location.search);
+      document.querySelectorAll("ilw-page").forEach(component => {
+        if (params.has('expanded')) {
+          component.setAttribute('expanded', params.get('expanded'));
+        }
+        if (params.has('ilw-format')) {
+          component.classList.add('ilw-format');
+        }
+        if (params.has('ilw-font')) {
+          component.classList.add('ilw-font');
+        }
+        if (params.has('ilw-margin')) {
+          component.classList.add('ilw-margin');
+        }
+      });
+    });
+  </script>
 </head>
 
 <body style="margin: 0; padding: 0;">
-  <ilw-page illinois="true">
+  <ilw-page>
     <header slot="header">
       <p style="margin: 0;">Header</p>
     </header>
