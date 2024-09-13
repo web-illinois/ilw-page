@@ -3,7 +3,8 @@
   "description": "Illinois Toolkit: This component is used to manage major areas inside an HTML page.",
   "repository": "github:web-illinois/ilw-page",
   "private": false,
-  "version": "1.0.0-alpha2",
+  "license": "MIT",
+  "version": "1.0.0-beta",
   "type": "module",
   "files": [
     "src/**",
