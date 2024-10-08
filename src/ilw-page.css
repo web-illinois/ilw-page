@@ -7,6 +7,8 @@
 
 ilw-page.ilw-margin {
   --ilw-page--margin: var(--ilw-margin--side, max(1.875rem, calc(50cqw - 37.5rem)));
+  display: block;
+  overflow-y: hidden;
 }
 
 ilw-page.ilw-font h1 {
