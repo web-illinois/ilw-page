@@ -21,10 +21,10 @@ Attributes include:
 Classes include
 
   * ilw-font - boolean, if the page uses the Illinois default fonts
-  * ilw-illinois - boolean, if the page uses the Illinois default fonts and colors. 
+  * ilw-format - boolean, if the page uses the Illinois default fonts and colors. 
   * ilw-margin - boolean, if the page uses the Illinois default margins. Note that this will prevent horizontal scrolling on the page. 
 
-`ilw-font` and `ilw-illinois` will change:
+`ilw-font` and `ilw-format` will change:
 
   * Headings
   * Lists

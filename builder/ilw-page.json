@@ -6,7 +6,7 @@
     "element-name": "ilw-page",
     "description": "The Page component, containing styles and margins for other components.",
     "purpose": "Use a standard layout for a page.",
-    "toolkit-version": "",
-    "production-version": "",
+    "toolkit-version": "1.0",
+    "production-version": "1.0",
     "development-version": "1.0-beta"
 }
