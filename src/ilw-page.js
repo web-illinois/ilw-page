@@ -1,8 +1,11 @@
 import { LitElement, html } from 'lit';
-import styles from './ilw-page.styles';
+import styles from './ilw-page.styles.js';
 import './ilw-page.css';
 
-class Page extends LitElement {
+/**
+ * @prop {Boolean} expanded
+ */
+export class Page extends LitElement {
 
   static get properties() {
     return {

@@ -1,13 +1,13 @@
 import { defineConfig } from 'vite'
+import dts from 'vite-plugin-dts'
 
-// https://vitejs.dev/config/
+/** @type {import('vite').UserConfig} */
 export default defineConfig({
-  root: 'src',
   build: {
-    outDir: '../dist',
+    outDir: './dist',
     lib: {
       name: 'ilw-page',
-      entry: 'ilw-page.js',
+      entry: './src/ilw-page.js',
       fileName: 'ilw-page',
       formats: ['es', 'cjs', 'umd'],
     },
@@ -19,6 +19,7 @@ export default defineConfig({
       }
     },
   },
+  plugins: [dts()],
   server: {
     hmr: false
   }
