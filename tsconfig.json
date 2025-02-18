@@ -1,0 +1,25 @@
+{
+    // Change this to match your project
+    "include": ["src/"],
+    "compilerOptions": {
+      "target": "ES2021",
+      "module": "es2015",
+      "moduleResolution": "node",
+      "allowJs": true,
+      "declaration": true,
+      "isolatedModules": true,
+      // This compiler run should
+      // only output d.ts files
+      "emitDeclarationOnly": true,
+      // Types should go into this directory.
+      // Removing this would place the .d.ts files
+      // next to the .js files
+      "outDir": "dist",
+      // go to js file when using IDE functions like
+      // "Go to Definition" in VSCode
+      "declarationMap": true,
+      "esModuleInterop": true,
+      "useDefineForClassFields": false,
+      "lib": ["es2021", "dom"]
+    }
+  }
