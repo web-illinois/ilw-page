@@ -4,7 +4,7 @@
   "repository": "github:web-illinois/ilw-page",
   "private": false,
   "license": "MIT",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "type": "module",
   "files": [
     "src/**",
@@ -16,18 +16,34 @@
       "import": "./src/ilw-page.js",
       "require": "./src/ilw-page.cjs",
       "default": "./src/ilw-page.js"
+    },
+    "./ilw-page.css": {
+        "import": "./dist/ilw-page.css"
     }
   },
+  "main": "./dist/ilw-page.js",
+  "module": "./dist/ilw-page.js",
   "scripts": {
-    "dev": "vite",
-    "build": "vite build --config vite.build.config.js --emptyOutDir",
-    "preview": "vite preview",
-    "prepack": "npm run build"
+      "dev": "vite",
+      "build": "tsc --noEmit && vite build --config vite.transpile.config.ts --emptyOutDir && vite build --config vite.build.config.ts --emptyOutDir",
+      "preview": "vite preview",
+      "prepack": "npm run build",
+      "test:axe": "playwright test",
+      "test:axe:github": "playwright test --config playwright.ci.config.ts",
+      "test": "vitest run --browser.headless",
+      "test:browser": "vitest browser --browser chromium"
   },
   "dependencies": {
-    "lit": "3.1.3"
+      "lit": "3.1.3"
   },
   "devDependencies": {
-    "vite": "^5.2.0"
+      "@illinois-toolkit/ilw-core": "^1.0.2",
+      "@playwright/test": "^1.54.1",
+      "@vitest/browser": "^3.2.4",
+      "vitest-browser-lit": "^0.1.0",
+      "playwright": "^1.54.1",
+      "typescript": "^5.9.2",
+      "vite": "^7.1.3",
+      "vite-plugin-dts": "^4.5.4"
   }
 }
