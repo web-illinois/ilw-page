@@ -1,7 +1,3 @@
-import { css } from 'lit';
-
-export default css`
-
 .page {
     display: grid;
     width: 100%;
@@ -33,4 +29,3 @@ export default css`
   margin-top: var(--ilw-page--main-margin-top, 0);
   margin-bottom: var(--ilw-page--main-margin-bottom, 0);
 }
-`;

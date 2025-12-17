@@ -35,20 +35,6 @@ ilw-page.ilw-font summary, ilw-page.ilw-font caption, ilw-page.ilw-font blockquo
   ilw-page.ilw-format main i, ilw-page.ilw-format main em {
     font-style: italic;
   }
-  ilw-page.ilw-format main a {
-    color: var(--ilw-link--color);
-    text-decoration: underline;
-    cursor: pointer;
-  }
-  ilw-page.ilw-format main a:hover, ilw-page.ilw-format main a:focus {
-    color: var(--ilw-link--color-focus);
-  }
-  ilw-page.ilw-format main a:focus {
-    outline: var(--ilw-link--outline-focus); 
-  }
-  ilw-page.ilw-format main a:visited {
-    color: var(--ilw-link--color-visited);
-  }
   
   ilw-page.ilw-format main h1, ilw-page.ilw-format main h2, ilw-page.ilw-format main h3, 
   ilw-page.ilw-format main h4, ilw-page.ilw-format main h5, ilw-page.ilw-format main h6 {
@@ -65,7 +51,7 @@ ilw-page.ilw-font summary, ilw-page.ilw-font caption, ilw-page.ilw-font blockquo
     font-size: 2.5rem;
     line-height: 2.875rem;
     margin-top: 1.3125rem;
-    margin-bottom: 2.625rem;
+    margin-bottom: 2rem;
     font-family: var(--il-font-heading);
   }
   ilw-page.ilw-format main h2 {
@@ -105,6 +91,25 @@ ilw-page.ilw-font summary, ilw-page.ilw-font caption, ilw-page.ilw-font blockquo
   ilw-page.ilw-format main li {
     font: 400 1.125rem/1.667 var(--il-font-sans);
     color: inherit;
+  }
+
+  ilw-page[theme] {
+    background-color: var(--ilw-color--background, white);
+    display: block;
+    color: var(--ilw-color--text, black);
+  }
+  ilw-page main a {
+    color: var(--ilw-color--link);
+    text-decoration: underline;
+    cursor: pointer;
+  }
+  ilw-page main a:hover, ilw-page main a:focus {
+    color: var(--ilw-color--link-hover);
+  }
+  ilw-page main a:focus {
+    color: var(--ilw-color--focus--text);
+    background: var(--ilw-color--focus--background);
+    outline: var(--ilw-color--focus--outline); 
   }
 }
 
