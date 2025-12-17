@@ -1,12 +1,12 @@
 import { expect, test } from "vitest";
 import { render } from "vitest-browser-lit";
 import { html } from "lit";
-import "../src/ilw-content";
+import "../src/ilw-page";
 
 const content = html`
-    <ilw-content>
+    <ilw-page>
       <h1>Heading 1</h1>
-    </ilw-content>`;
+    </ilw-page>`;
 
 test("renders slotted content", async () => {
     const screen = render(content);
