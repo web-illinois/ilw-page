@@ -4,7 +4,7 @@
   "repository": "github:web-illinois/ilw-page",
   "private": false,
   "license": "MIT",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "type": "module",
   "files": [
     "src/**",
@@ -13,9 +13,9 @@
   ],
   "exports": {
     ".": {
-      "import": "./src/ilw-page.js",
-      "require": "./src/ilw-page.cjs",
-      "default": "./src/ilw-page.js"
+      "import": "./dist/ilw-page.js",
+      "require": "./dist/ilw-page.cjs",
+      "default": "./dist/ilw-page.js"
     },
     "./ilw-page.css": {
         "import": "./dist/ilw-page.css"
