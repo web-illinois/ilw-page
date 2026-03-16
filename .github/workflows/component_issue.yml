@@ -10,4 +10,4 @@ jobs:
         id-token: write  
       uses: web-illinois/toolkit-management/.github/workflows/component_issue.yml@main
       secrets:
-        TOOLKIT_AWS_ACCESS_SECRET: ${{ secrets.TOOLKIT_PROJECT_PAT_CLASSIC }}
+        TOOLKIT_PROJECT_PAT_CLASSIC: ${{ secrets.TOOLKIT_PROJECT_PAT_CLASSIC }}
