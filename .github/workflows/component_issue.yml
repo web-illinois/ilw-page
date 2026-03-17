@@ -1,4 +1,4 @@
-name: deploy
+name: component_issue
 on:
   issues:
     types: [opened, labeled, reopened] 
