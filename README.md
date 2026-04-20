@@ -100,6 +100,9 @@ Note that this does not change the body tag. You may need to manually add styles
 https://www.nngroup.com/articles/golden-ratio-ui-design/
 https://gridlover.net/try
 
+
+
+
 ## Theme/Dark Mode
 
 The application supports theming to allow users to switch between light and dark modes. 
@@ -127,31 +130,27 @@ Example:
 
 ```
 <html data-theme="light">
-
 ```
 
 ```
-
 <html data-theme="dark">
-
 ```
 ### Define how dark mode works
 
-Attribute name: data-theme
-Possible values: light | dark (extendable)
-Default behavior: 
-  Use system preference (prefers-color-scheme) OR
-  Default to light
-Override behavior:
-  User toggle overrides default
-Persistence:
-  Stored in localStorage (local storage - is a simple way to save small pieces of data in the users browser so it's still there the next time they come back.)
+* Attribute name: data-theme
+* Possible values: light | dark (extendable)
+* Default behavior: 
+  * Use system preference (prefers-color-scheme) OR
+  * Default to light
+* Override behavior:
+  * User toggle overrides default
+* Persistence:
+  * Stored in localStorage (local storage - is a simple way to save small pieces of data in the users browser so it's still there the next time they come back.)
 
 Save the theme in javascript:
 
 ```
 lovalStorage.setItem("theme", "dark");
-
 ```
 
 Get the theme in javascript:
@@ -161,4 +160,4 @@ const theme = localStorage.getItem("theme");
 
 ```
 
-### Decide CSS strategy
+### Decide CSS strategy (WIP)
