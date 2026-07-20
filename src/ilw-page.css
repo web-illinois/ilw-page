@@ -93,10 +93,17 @@ ilw-page.ilw-font summary, ilw-page.ilw-font caption, ilw-page.ilw-font blockquo
     color: inherit;
   }
 
-  ilw-page[theme] {
+  ilw-page[data-theme="light"] {
     background-color: var(--ilw-color--background, white);
     display: block;
     color: var(--ilw-color--text, black);
+  }
+
+  /* TODO: Make sure its needed. Dark Theme Overrides */
+  ilw-page[data-theme="dark"] {
+    background-color: var(--ilw-color--background, black);
+    display: block;
+    color: var(--ilw-color--text, white);
   }
   ilw-page main a {
     color: var(--ilw-color--link);

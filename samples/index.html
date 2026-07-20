@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light" >
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,6 +14,30 @@
     footer {
       background-color: #FFB6C1;
     }
+    :root {
+      --background-color:#fff;
+      --text-color:#202020;
+      --border-color:#d0d0d0;
+      --surface-color:#f7f7f7;
+    }
+    [data-theme="dark"] {
+      --background-color:#181818;
+      --text-color:#f5f5f5;
+      --border-color:#505050;
+      --surface-color:#2a2a2a;
+    }
+    body {
+      margin:0;
+      padding:24px;
+      font-family:Arial,sans-serif;
+      background:var(--background-color);
+      color:var(--text-color);
+      transition:background-color .25s,color .25s;
+    }
+    header {
+      margin-bottom:32px}.card{background:var(--surface-color);border:1px solid var(--border-color);padding:20px;border-radius:6px}.hidden{display:none}
+    
+    
   </style>
   <script>
     let componentName = 'ilw-page';
@@ -28,14 +52,56 @@
           }
         }
       });
+    
+      // BEGIN Dark/Light Mode toggle functionality
+      const toggle = document.getElementById("themeToggle");
+      const message = document.getElementById("themeMessage");
+
+      const darkModeEnabled =
+          document.body.dataset.darkModeEnabled !== "false";
+
+      alert("dark mode enabled = " + darkModeEnabled);
+      if (darkModeEnabled) {
+
+          toggle.checked = false;
+          toggle.disabled = true;
+
+          message.textContent =
+              "This website does not support Dark Mode.";
+
+      } else {
+
+          message.textContent = "";
+
+          toggle.addEventListener("change", () => {
+
+              document.documentElement.dataset.theme =
+                  toggle.checked ? "dark" : "light";
+
+          });
+
+      }
     });
+    
   </script>
 </head>
 
-<body style="margin: 0; padding: 0;">
+<!-- Set data-dark-mode-enabled to "true" or "false" to control whether Dark Mode is available on this page.  -->
+<body style="margin: 0; padding: 0;" data-dark-mode-enabled="false">
   <ilw-page>
     <header slot="header">
       <p style="margin: 0;">Header</p>
+      <div class="theme-switch">
+        <input
+          type="checkbox"
+          id="themeToggle"
+          aria-describedby="themeMessage">
+        <label for="themeToggle">
+          Dark Mode
+        </label>  
+
+        <p id="themeMessage" class="theme-message"></p>
+      </div>
     </header>
     <main>
       <h1>Douglas Adams: The Literary Genius</h1>
