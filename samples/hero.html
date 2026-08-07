@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Page Component</title>
+  <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
+  <link rel="stylesheet" href="https://cdn.toolkit.illinois.edu/ilw-global/3/ilw-global.css">
+  <script type="module" src="/src/ilw-page.ts"></script>
+  <style>
+    header {
+      background-color: #90EE90;
+    }
+    footer {
+      background-color: #FFB6C1;
+    }
+  </style>
+</head>
+
+<body style="margin: 0; padding: 0;">
+  <ilw-page class="ilw-font">
+    <header slot="header">
+      <p style="margin: 0;">Header</p>
+    </header>
+    <main>
+      <p>Testing hero and page title</p>
+      <h1>H1 Item</h1>
+      <h2>H2 Item</h2>
+      <ilw-hero>
+        <h1>H1 Item inside ilw-hero</h1>
+      </ilw-hero>
+      <ilw-hero>
+        <h2>H2 Item inside ilw-hero</h2>
+      </ilw-hero>
+      <ilw-page-title>
+        <h1>H1 Item inside ilw-page-title</h1>
+      </ilw-page-title>
+      <ilw-page-title>
+        <h2>H2 Item inside ilw-page-title</h2>
+      </ilw-page-title>
+    </main>
+    <footer slot="footer">
+      <p style="margin: 0;">Footer content</p>
+    </footer>
+  </ilw-page>
+
+</body>
+
+</html>

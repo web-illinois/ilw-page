@@ -15,6 +15,10 @@ ilw-page.ilw-font h1 {
   font-family: var(--il-font-heading);
 }
 
+ilw-page.ilw-font ilw-hero h1, ilw-page.ilw-font ilw-page-title h1 {
+  font-family: var(--il-font-sans);
+}
+
 ilw-page.ilw-font h2, ilw-page.ilw-font h3, ilw-page.ilw-font h4, ilw-page.ilw-font p, ilw-page.ilw-font li, 
 ilw-page.ilw-font div, ilw-page.ilw-font input, ilw-page.ilw-font select, ilw-page.ilw-font textarea, 
 ilw-page.ilw-font summary, ilw-page.ilw-font caption, ilw-page.ilw-font blockquote {
