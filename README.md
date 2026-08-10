@@ -105,43 +105,77 @@ https://gridlover.net/try
 
 ## Theme/Dark Mode
 
-The application supports theming to allow users to switch between light and dark modes. 
+The application supports theming to allow users to switch between light and dark modes when Dark Mode is enabled for the website.
 
-Theme is controlled globally using data attribute applied at the root level of the document.
+Theme configuration is controlled globally using data attributes applied at the root level of the document.
 
 Attributes include:
+  
+* data-dark-mode-enabled – boolean, determines whether Dark Mode is available for the page
+  * true – Dark Mode is supported and the user can toggle between light and dark modes
+  * false – Dark Mode is not supported; the Dark Mode option is disabled and an informational message is displayed
 
-  * data-theme – string, defines the active theme for the page
-    * light – default light mode
-    * dark – dark mode
+* data-theme – string, defines the active theme for the page
+  * light – default light mode
+  * dark – dark mode
 
-If no value is explicitly set, the page will default to light mode (or may follow system preferences if implemented).
+If data-dark-mode-enabled is set to false, the Dark Mode checkbox is disabled and the user is informed that Dark Mode is not supported on the website.
 
-User interaction (such as a toggle switch) will update the data-theme attribute dynamically.
+If no theme is explicitly set, the application defaults to light mode (or may follow system preferences if system theme support is implemented).
 
-The selected theme may be persisted (e.g., using local storage) to maintain the user’s preference across sessions.
+User interaction through the Dark Mode checkbox updates the data-theme attribute dynamically when Dark Mode is enabled.
+
+The selected theme may be persisted (for example, using local storage) to maintain the user’s preference across sessions.
 
 
 Steps to define the rules to have modes:
 
-### Use a single theme attribute on root element.
+### Use theme attributes on root element.
+Theme availability and the active theme are controlled using data attributes applied at the root level.
 
 Example:
 
 ```
-<html data-theme="light">
+<!-- Dark Mode supported --> 
+<html data-dark-mode-enabled="true" data-theme="light"> 
 ```
 
 ```
-<html data-theme="dark">
+<!-- Dark Mode supported and currently enabled --> 
+<html data-dark-mode-enabled="true" data-theme="dark"> 
 ```
-### Define how dark mode works
 
-* Attribute name: data-theme
-* Possible values: light | dark (extendable)
-* Default behavior: 
-  * Use system preference (prefers-color-scheme) OR
-  * Default to light
+```
+<!-- Dark Mode not supported --> 
+<html data-dark-mode-enabled="false" data-theme="light"> 
+```
+
+### Define how Dark Mode works
+
+* Attribute name: data-dark-mode-enabled
+* Possible values: 
+  * true - Dark Mode is supported and the user can toggle between light and dark modes
+  * false - Dark Mode is not supported. The Dark Mode checkbox is disabled and an informational message is displayed
+
+### Theme override behaviour
+
+* When Dark Mode is enabled:
+  * User selection from the Dark Mode checkbox updates the data-theme attribute dynamically.
+  * The selected theme overrides the default theme preference.
+* When Dark Mode is disabled:
+  * The Dark Mode checkbox is disabled.
+  * The application remains in Light Mode.
+
+### Persistence
+
+The selected theme may be stored in localStorage so the user's preference is maintained across browser sessions.
+
+localStorage is a simple way to save small pieces of data in the user's browser so the data remains available when the user returns.
+
+```
+localStorage.setItem("theme", "dark");
+```
+
 * Override behavior:
   * User toggle overrides default
 * Persistence:
@@ -153,7 +187,7 @@ Save the theme in javascript:
 lovalStorage.setItem("theme", "dark");
 ```
 
-Get the theme in javascript:
+Retrieve the saved theme in JavaScript:
 
 ```
 const theme = localStorage.getItem("theme");

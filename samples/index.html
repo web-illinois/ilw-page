@@ -10,6 +10,9 @@
   <style>
     header {
       background-color: #90EE90;
+      display: flex;
+    align-items: center;
+    padding: 10px 20px;
     }
     footer {
       background-color: #FFB6C1;
@@ -37,7 +40,9 @@
     header {
       margin-bottom:32px}.card{background:var(--surface-color);border:1px solid var(--border-color);padding:20px;border-radius:6px}.hidden{display:none}
     
-    
+    .theme-switch {
+      margin-left: auto;
+    }
   </style>
   <script>
     let componentName = 'ilw-page';
@@ -55,28 +60,21 @@
     
       // BEGIN Dark/Light Mode toggle functionality
       const toggle = document.getElementById("themeToggle");
-      const message = document.getElementById("themeMessage");
+      const disabledText = document.getElementById("disabledText");
 
       const darkModeEnabled =
-          document.body.dataset.darkModeEnabled !== "false";
+          document.body.dataset.darkModeEnabled === "true";
 
-      alert("dark mode enabled = " + darkModeEnabled);
-      if (darkModeEnabled) {
+      if (!darkModeEnabled) {
 
-          toggle.checked = false;
-          toggle.disabled = true;
-
-          message.textContent =
-              "This website does not support Dark Mode.";
+        themeToggleContainer.hidden = true;
 
       } else {
 
-          message.textContent = "";
+        toggle.addEventListener("change", () => {
 
-          toggle.addEventListener("change", () => {
-
-              document.documentElement.dataset.theme =
-                  toggle.checked ? "dark" : "light";
+        document.documentElement.dataset.theme =
+            toggle.checked ? "dark" : "light";
 
           });
 
@@ -87,20 +85,19 @@
 </head>
 
 <!-- Set data-dark-mode-enabled to "true" or "false" to control whether Dark Mode is available on this page.  -->
-<body style="margin: 0; padding: 0;" data-dark-mode-enabled="false">
+<body style="margin: 0; padding: 0;" data-dark-mode-enabled="true">
   <ilw-page>
     <header slot="header">
       <p style="margin: 0;">Header</p>
-      <div class="theme-switch">
+      <div class="theme-switch" id="themeToggleContainer">
         <input
           type="checkbox"
-          id="themeToggle"
-          aria-describedby="themeMessage">
+          id="themeToggle">
         <label for="themeToggle">
           Dark Mode
+          <span id="disabledText"></span>
         </label>  
 
-        <p id="themeMessage" class="theme-message"></p>
       </div>
     </header>
     <main>
