@@ -7,43 +7,8 @@
   <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
   <link rel="stylesheet" href="https://cdn.toolkit.illinois.edu/ilw-global/3/ilw-global.css">
   <script type="module" src="/src/ilw-page.ts"></script>
-  <style>
-    header {
-      background-color: #90EE90;
-      display: flex;
-    align-items: center;
-    padding: 10px 20px;
-    }
-    footer {
-      background-color: #FFB6C1;
-    }
-    :root {
-      --background-color:#fff;
-      --text-color:#202020;
-      --border-color:#d0d0d0;
-      --surface-color:#f7f7f7;
-    }
-    [data-theme="dark"] {
-      --background-color:#181818;
-      --text-color:#f5f5f5;
-      --border-color:#505050;
-      --surface-color:#2a2a2a;
-    }
-    body {
-      margin:0;
-      padding:24px;
-      font-family:Arial,sans-serif;
-      background:var(--background-color);
-      color:var(--text-color);
-      transition:background-color .25s,color .25s;
-    }
-    header {
-      margin-bottom:32px}.card{background:var(--surface-color);border:1px solid var(--border-color);padding:20px;border-radius:6px}.hidden{display:none}
-    
-    .theme-switch {
-      margin-left: auto;
-    }
-  </style>
+  <link rel="stylesheet" href="../src/dark-mode.css" />
+ 
   <script>
     let componentName = 'ilw-page';
     document.addEventListener("DOMContentLoaded", function(event) {
@@ -60,25 +25,39 @@
     
       // BEGIN Dark/Light Mode toggle functionality
       const toggle = document.getElementById("themeToggle");
-      const disabledText = document.getElementById("disabledText");
+      const themeToggleContainer =
+          document.getElementById("themeToggleContainer");
 
       const darkModeEnabled =
           document.body.dataset.darkModeEnabled === "true";
 
       if (!darkModeEnabled) {
-
-        themeToggleContainer.hidden = true;
-
-      } else {
-
-        toggle.addEventListener("change", () => {
-
-        document.documentElement.dataset.theme =
-            toggle.checked ? "dark" : "light";
-
-          });
-
+          themeToggleContainer.hidden = true;
+          return;
       }
+
+
+      // 1. Check localStorage when the page loads
+      const savedTheme = localStorage.getItem("theme") || "light";
+
+      // 2. Apply the saved theme to the <html> element
+      document.documentElement.dataset.theme = savedTheme;
+
+      // 3. Make sure the checkbox matches the saved theme
+      toggle.checked = savedTheme === "dark";
+      
+      // 4. Listen for future changes
+      toggle.addEventListener("change", () => {
+
+        const theme = toggle.checked ? "dark" : "light";
+        
+        // Update page
+        document.documentElement.dataset.theme = theme;
+
+        // Remember user's choice
+        localStorage.setItem("theme", theme);
+    });
+      
     });
     
   </script>
@@ -95,7 +74,6 @@
           id="themeToggle">
         <label for="themeToggle">
           Dark Mode
-          <span id="disabledText"></span>
         </label>  
 
       </div>

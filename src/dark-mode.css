@@ -1,0 +1,187 @@
+/* =========================================================
+   Dark Mode css from Mikael Arvola
+   Uses the application's existing data-theme attribute
+   ========================================================= */
+
+/* ---------- Illinois color definitions ---------- */
+body {
+    outline: 10px solid red !important;
+}
+:root {
+    --il-orange: #FF5F05;
+    --il-orange2: #FF5F05;
+
+    --il-blue-70: #13294B;
+    --il-blue-90: #11181D;
+
+    --il-industrial: #5E98E4;
+    --il-industrial-lighter-4: #759BD1;
+
+    --il-storm-10: #F4F4F4;
+    --il-storm-80: #474948;
+    --il-storm-95: #191919;
+
+    --il-arches-90: #C7EDF8;
+}
+
+
+/* =========================================================
+   LIGHT MODE
+   ========================================================= */
+
+:root,
+[data-theme="light"] {
+    --ilw-color--background: #ffffff;
+    --ilw-color--text: #202020;
+    --ilw-color--border: #d0d0d0;
+    --ilw-color--border-light: #eeeeee;
+
+    --ilw-color--link: var(--il-industrial);
+    --ilw-color--link-hover: var(--il-orange);
+    --ilw-color--link-visited: var(--il-industrial);
+
+    --ilw-color--heading: #202020;
+}
+
+
+/* =========================================================
+   DARK MODE
+   ========================================================= */
+
+[data-theme="dark"] {
+    --ilw-color--background: #000000;
+    --ilw-color--text: #ffffff;
+    --ilw-color--border: var(--il-storm-80);
+    --ilw-color--border-light: #121212;
+
+    --ilw-color--link: var(--il-industrial);
+    --ilw-color--link-hover: var(--il-orange);
+    --ilw-color--link-visited: #ffffff;
+
+    --ilw-color--heading: #ffffff;
+    --ilw-color--heading-link: #ffffff;
+    --ilw-color--heading-link-hover: var(--il-orange);
+
+    /* page colors */
+    --background-color: #181818;
+    --text-color: #f5f5f5;
+    --border-color: #505050;
+    --surface-color: #2a2a2a;
+}
+
+
+/* =========================================================
+   PAGE
+   ========================================================= */
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+
+    background: var(--background-color);
+    color: var(--text-color);
+
+    transition:
+        background-color .25s,
+        color .25s;
+}
+
+
+/* =========================================================
+   DARK MODE PAGE ELEMENTS
+   ========================================================= */
+
+[data-theme="dark"] body {
+    background: var(--background-color);
+    color: var(--text-color);
+}
+
+[data-theme="dark"] a {
+    color: var(--ilw-color--link);
+}
+
+[data-theme="dark"] a:hover {
+    color: var(--ilw-color--link-hover);
+}
+
+[data-theme="dark"] h1,
+[data-theme="dark"] h2,
+[data-theme="dark"] h3,
+[data-theme="dark"] h4 {
+    color: var(--ilw-color--heading);
+}
+
+
+/* =========================================================
+   CARDS
+   ========================================================= */
+
+.card {
+    background: var(--surface-color);
+    border: 1px solid var(--border-color);
+    padding: 20px;
+    border-radius: 6px;
+}
+
+
+/* =========================================================
+   ILLINOIS HEADER
+   ========================================================= */
+
+[data-theme="dark"] :is(ilw-header, header) {
+    background-color: #000;
+    border-bottom-color: var(--il-industrial);
+}
+
+
+/* Search box inside Illinois header */
+
+[data-theme="dark"] :is(ilw-header, header) [role="search"] input {
+    background-color: #000 !important;
+    color: #fff;
+}
+
+[data-theme="dark"] :is(ilw-header, header) [role="search"] input::placeholder {
+    color: #fff;
+}
+
+[data-theme="dark"] :is(ilw-header, header) [role="search"] button {
+    background-color: #000 !important;
+    color: #fff;
+}
+
+
+/* =========================================================
+   ILLINOIS HEADER MENU
+   ========================================================= */
+
+[data-theme="dark"] ilw-header-menu {
+    --ilw-header-menu--background: var(--il-blue-70);
+    --ilw-header-menu--link-color: #fff;
+    --ilw-header-menu--link-color--hover: var(--il-blue-70);
+    --ilw-header-menu--link-background: transparent;
+    --ilw-header-menu--link-background--hover: var(--il-orange2);
+    --ilw-header-menu--link-background--focus: var(--il-industrial-lighter-4);
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+[data-theme="dark"] ilw-footer {
+    --il-blue: var(--il-blue-70);
+}
+
+
+/* =========================================================
+   THEME TOGGLE
+   ========================================================= */
+
+.theme-switch {
+    margin-left: auto;
+}
+
+.hidden {
+    display: none;
+}
