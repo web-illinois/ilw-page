@@ -4,9 +4,17 @@
    ========================================================= */
 
 /* ---------- Illinois color definitions ---------- */
+/*
+-------body { } debugging code to determine whether the CSS file was actually loading.
+
+It has nothing to do with dark mode.
+
+Once you confirm the CSS is being loaded, remove it. -------
+*/
 body {
     outline: 10px solid red !important;
 }
+
 :root {
     --il-orange: #FF5F05;
     --il-orange2: #FF5F05;
@@ -43,32 +51,30 @@ body {
     --ilw-color--heading: #202020;
 }
 
-
 /* =========================================================
    DARK MODE
    ========================================================= */
 
 [data-theme="dark"] {
-    --ilw-color--background: #000000;
-    --ilw-color--text: #ffffff;
+    --ilw-color--background: var(--il-storm-95);
+    --ilw-color--text: var(--il-storm-10);
     --ilw-color--border: var(--il-storm-80);
-    --ilw-color--border-light: #121212;
+    --ilw-color--border-light: var(--il-blue-90);
 
     --ilw-color--link: var(--il-industrial);
     --ilw-color--link-hover: var(--il-orange);
-    --ilw-color--link-visited: #ffffff;
+    --ilw-color--link-visited: var(--il-storm-10);
 
-    --ilw-color--heading: #ffffff;
-    --ilw-color--heading-link: #ffffff;
+    --ilw-color--heading: var(--il-storm-10);
+    --ilw-color--heading-link: var(--il-storm-10);
     --ilw-color--heading-link-hover: var(--il-orange);
 
     /* page colors */
-    --background-color: #181818;
+   --background-color: #181818;
     --text-color: #f5f5f5;
     --border-color: #505050;
     --surface-color: #2a2a2a;
 }
-
 
 /* =========================================================
    PAGE
@@ -76,7 +82,7 @@ body {
 
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    /*font-family: Arial, sans-serif;*/
 
     background: var(--background-color);
     color: var(--text-color);
@@ -116,12 +122,12 @@ body {
    CARDS
    ========================================================= */
 
-.card {
+/*.card {
     background: var(--surface-color);
     border: 1px solid var(--border-color);
     padding: 20px;
     border-radius: 6px;
-}
+}*/
 
 
 /* =========================================================
