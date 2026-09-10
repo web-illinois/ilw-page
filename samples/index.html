@@ -24,51 +24,46 @@
       });
     
       // BEGIN Dark/Light Mode toggle functionality
-      const toggle = document.getElementById("themeToggle");
-      const themeToggleContainer =
-          document.getElementById("themeToggleContainer");
+      // Read the user's saved theme from the cookie
+      const savedTheme = getDarkModeCookie();
 
-      const darkModeEnabled =
-          document.body.dataset.darkModeEnabled === "true";
-
-      if (!darkModeEnabled) {
-          themeToggleContainer.hidden = true;
-          return;
-      }
-
-
-      // 1. Check localStorage when the page loads
-      const savedTheme = localStorage.getItem("theme") || "light";
-
-      // 2. Apply the saved theme to the <html> element
+      // Apply the saved theme to the <html> element
       document.documentElement.dataset.theme = savedTheme;
 
-      // 3. Make sure the checkbox matches the saved theme
-      toggle.checked = savedTheme === "dark";
-      
-      // 4. Listen for future changes
-      toggle.addEventListener("change", () => {
+      /* ilw-page should listen for the event from the ilw-header.*/
+      window.addEventListener("ilw-dark-mode-changed", (event) => {
+      const enabled = event.detail.enabled;
 
-        const theme = toggle.checked ? "dark" : "light";
-        
-        // Update page
-        document.documentElement.dataset.theme = theme;
+      document.documentElement.dataset.theme =
+        enabled ? "dark" : "light";
+    });
+    });
 
-        // Remember user's choice
-        localStorage.setItem("theme", theme);
-    });
-      
-    });
-    
+    function getDarkModeCookie() {
+      const cookies = document.cookie.split("; ");
+
+      const darkModeCookie = cookies.find(cookie =>
+          cookie.startsWith("ilw-dark-mode=")
+      );
+
+      if (!darkModeCookie) {
+          return "light";
+      }
+
+      const value = darkModeCookie.split("=")[1];
+
+      return value === "true" ? "dark" : "light";
+  
+    }
   </script>
 </head>
 
-<!-- Set data-dark-mode-enabled to "true" or "false" to control whether Dark Mode is available on this page.  -->
-<body style="margin: 0; padding: 0;" data-dark-mode-enabled="true">
+<body style="margin: 0; padding: 0;">
   <ilw-page>
     <header slot="header">
       <p style="margin: 0;">Header</p>
-      <div class="theme-switch" id="themeToggleContainer">
+      <!-- Moved checkbox HTML to ilw-header. The header component itself will render the Dark Mode checkbox. -->
+      <!--div class="theme-switch" id="themeToggleContainer">
         <input
           type="checkbox"
           id="themeToggle">
@@ -76,7 +71,7 @@
           Dark Mode
         </label>  
 
-      </div>
+      </div> -->
     </header>
     <main>
       <h1>Douglas Adams: The Literary Genius</h1>

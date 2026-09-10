@@ -181,12 +181,14 @@ body {
 
 
 /* =========================================================
-   THEME TOGGLE
+   THEME TOGGLE 
+   .theme-switch - Move to ilw-header component and commented out here. 
+   The header component will render the Dark Mode checkbox.
    ========================================================= */
 
-.theme-switch {
+/* .theme-switch {
     margin-left: auto;
-}
+} */
 
 .hidden {
     display: none;
