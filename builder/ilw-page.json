@@ -1,12 +1,26 @@
 {
-    "title": "Page",
-    "tag": "ilw-page",
-    "github": "https://github.com/web-illinois/ilw-page/",
-    "type": "web component",
-    "element-name": "ilw-page",
-    "description": "The Page component, containing styles and margins for other components.",
-    "purpose": "Use a standard layout for a page.",
-    "toolkit-version": "1.1",
-    "production-version": "1.2",
-    "development-version": "1.0-beta"
+  "title": "Page",
+  "id": "ilw-page",
+  "type": "Web Component",
+  "repository-name": "ilw-page",
+  "description": "Give a page a consistent content width, margins, and responsive layout for combining Illinois components.",
+  "purpose": "Use a standard layout for a page.",
+  "customtemplates": [],
+  "versions": [
+    {
+      "name": "1.0",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.1",
+      "notes": "",
+      "template": "1.0"
+    },
+    {
+      "name": "1.2",
+      "notes": "",
+      "template": "1.0"
+    }
+  ]
 }
