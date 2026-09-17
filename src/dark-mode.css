@@ -1,20 +1,17 @@
 /* =========================================================
-   Dark Mode css from Mikael Arvola
-   Uses the application's existing data-theme attribute
+   Illinois Toolkit Dark Mode
+   --------------------------------------------------------- 
+    Dark mode is enabled by: 
+        <html data-theme="dark"> 
+        
+    Light mode is enabled by:
+        <html data-theme="light"> 
+   
+    The ilw-header component owns the Dark Mode checkbox 
+    and communicates the user's preference to ilw-page.
    ========================================================= */
 
 /* ---------- Illinois color definitions ---------- */
-/*
--------body { } debugging code to determine whether the CSS file was actually loading.
-
-It has nothing to do with dark mode.
-
-Once you confirm the CSS is being loaded, remove it. -------
-*/
-body {
-    outline: 10px solid red !important;
-}
-
 :root {
     --il-orange: #FF5F05;
     --il-orange2: #FF5F05;
@@ -49,6 +46,9 @@ body {
     --ilw-color--link-visited: var(--il-industrial);
 
     --ilw-color--heading: #202020;
+    --ilw-color--heading-link: var(--il-industrial);
+    --ilw-color--heading-link-hover: var(--il-orange);
+    --ilw-color--heading-visited: var(--il-industrial);
 }
 
 /* =========================================================
@@ -66,11 +66,12 @@ body {
     --ilw-color--link-visited: var(--il-storm-10);
 
     --ilw-color--heading: var(--il-storm-10);
+
     --ilw-color--heading-link: var(--il-storm-10);
     --ilw-color--heading-link-hover: var(--il-orange);
 
     /* page colors */
-   --background-color: #181818;
+    --background-color: #181818;
     --text-color: #f5f5f5;
     --border-color: #505050;
     --surface-color: #2a2a2a;
@@ -110,14 +111,84 @@ body {
     color: var(--ilw-color--link-hover);
 }
 
+[data-theme="dark"] a:visited {
+    color: var(--ilw-color--link-visited);
+}
+
+/*========================================================= 
+ HEADINGS 
+========================================================= */
 [data-theme="dark"] h1,
 [data-theme="dark"] h2,
 [data-theme="dark"] h3,
-[data-theme="dark"] h4 {
+[data-theme="dark"] h4,
+[data-theme="dark"] h5,
+[data-theme="dark"] h6 {
     color: var(--ilw-color--heading);
 }
 
+/* Heading links */ 
+[data-theme="dark"] h1 a, 
+[data-theme="dark"] h2 a, 
+[data-theme="dark"] h3 a, 
+[data-theme="dark"] h4 a, 
+[data-theme="dark"] h5 a, 
+[data-theme="dark"] h6 a {
+    color: var(--ilw-color--heading-link); 
+} 
 
+[data-theme="dark"] h1 a:hover, 
+[data-theme="dark"] h2 a:hover, 
+[data-theme="dark"] h3 a:hover, 
+[data-theme="dark"] h4 a:hover, 
+[data-theme="dark"] h5 a:hover, 
+[data-theme="dark"] h6 a:hover { 
+    color: var(--ilw-color--heading-link-hover); 
+}
+
+/*========================================================= 
+    FORM CONTROLS 
+========================================================= */ 
+[data-theme="dark"] input, 
+[data-theme="dark"] select, 
+[data-theme="dark"] textarea { 
+    background-color: var(--ilw-color--control); 
+    color: var(--ilw-color--control-text); 
+    border-color: var(--ilw-color--border); 
+} 
+
+[data-theme="dark"] input::placeholder, 
+[data-theme="dark"] textarea::placeholder { 
+    color: #b8b8b8; 
+}
+
+[data-theme="dark"] input:focus, 
+[data-theme="dark"] select:focus, 
+[data-theme="dark"] textarea:focus { 
+    border-color: var(--ilw-color--control-accent); 
+}
+
+/* ========================================================= 
+TABLES 
+========================================================= */ 
+[data-theme="dark"] table { 
+    color: var(--ilw-color--text); 
+    background-color: var(--ilw-color--table-background); 
+}
+
+[data-theme="dark"] th { 
+    color: var(--ilw-color--table-head-color); 
+    background-color: var(--ilw-color--table-head-background); 
+}
+
+[data-theme="dark"] td, 
+[data-theme="dark"] th { 
+    border-color: var(--ilw-color--table-border); 
+} 
+
+[data-theme="dark"] tbody tr:nth-child(even) { 
+    background-color: var(--ilw-color--table-row-stripe); 
+}
 /* =========================================================
    CARDS
    ========================================================= */
@@ -132,6 +203,9 @@ body {
 
 /* =========================================================
    ILLINOIS HEADER
+   --------------------------------------------------------- 
+   Header-specific styling remains here because ilw-header 
+   is a separate web component.
    ========================================================= */
 
 [data-theme="dark"] :is(ilw-header, header) {
@@ -177,6 +251,20 @@ body {
 
 [data-theme="dark"] ilw-footer {
     --il-blue: var(--il-blue-70);
+}
+
+/* ========================================================= 
+    FOCUS 
+   ========================================================= */
+[data-theme="dark"] :focus-visible { 
+    outline-color: #759bd1; 
+} 
+
+/* ========================================================= 
+    SELECTION 
+  ========================================================= */ 
+[data-theme="dark"] ::selection { 
+    background-color: #ff5f05; color: #13294b; 
 }
 
 
