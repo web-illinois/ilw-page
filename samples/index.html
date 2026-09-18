@@ -1,5 +1,6 @@
 <!doctype html>
-<html lang="en" data-theme="light" >
+<!--html lang="en" data-theme="light" >-->
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -27,8 +28,14 @@
       // Read the user's saved theme from the cookie
       const savedTheme = getDarkModeCookie();
 
+      if (savedTheme) {
+        document.documentElement.dataset.theme = savedTheme;
+      } else {
+        // If no saved theme, check the system preference
+        document.documentElement.dataset.theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+      }
       // Apply the saved theme to the <html> element
-      document.documentElement.dataset.theme = savedTheme;
+     // document.documentElement.dataset.theme = savedTheme;
 
       /* ilw-page should listen for the event from the ilw-header.*/
       window.addEventListener("ilw-dark-mode-changed", (event) => {
@@ -47,7 +54,7 @@
       );
 
       if (!darkModeCookie) {
-          return "light";
+          return null; // No cookie found, return null
       }
 
       const value = darkModeCookie.split("=")[1];
@@ -62,16 +69,6 @@
   <ilw-page>
     <header slot="header">
       <p style="margin: 0;">Header</p>
-      <!-- Moved checkbox HTML to ilw-header. The header component itself will render the Dark Mode checkbox. -->
-      <!--div class="theme-switch" id="themeToggleContainer">
-        <input
-          type="checkbox"
-          id="themeToggle">
-        <label for="themeToggle">
-          Dark Mode
-        </label>  
-
-      </div> -->
     </header>
     <main>
       <h1>Douglas Adams: The Literary Genius</h1>
