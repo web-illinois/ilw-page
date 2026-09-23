@@ -61,7 +61,7 @@ If the user has not explicitly selected a theme,
 follow the operating system/browser preference. 
 ========================================================= */ 
 @media (prefers-color-scheme: dark) { 
-    :root { 
+    :root[data-dark-mode-supported="true"] { 
         --ilw-color--background: var(--il-storm-95); 
         --ilw-color--text: var(--il-storm-10); 
         --ilw-color--border: var(--il-storm-80); 
@@ -143,7 +143,7 @@ follow the operating system/browser preference.
    data-theme="dark" overrides the system preference.
    ========================================================= */
 
-[data-theme="dark"] {
+[data-dark-mode-supported="true"][data-theme="dark"] {
     --ilw-color--background: var(--il-storm-95);
     --ilw-color--text: var(--il-storm-10);
     --ilw-color--border: var(--il-storm-80);
@@ -186,95 +186,95 @@ body {
    DARK MODE PAGE ELEMENTS
    ========================================================= */
 
-[data-theme="dark"] body {
+[data-dark-mode-supported="true"][data-theme="dark"] body {
     background: var(--background-color);
     color: var(--text-color);
 }
 
-[data-theme="dark"] a {
+[data-dark-mode-supported="true"][data-theme="dark"] a {
     color: var(--ilw-color--link);
 }
 
-[data-theme="dark"] a:hover {
+[data-dark-mode-supported="true"][data-theme="dark"] a:hover {
     color: var(--ilw-color--link-hover);
 }
 
-[data-theme="dark"] a:visited {
+[data-dark-mode-supported="true"][data-theme="dark"] a:visited {
     color: var(--ilw-color--link-visited);
 }
 
 /*========================================================= 
  HEADINGS 
 ========================================================= */
-[data-theme="dark"] h1,
-[data-theme="dark"] h2,
-[data-theme="dark"] h3,
-[data-theme="dark"] h4,
-[data-theme="dark"] h5,
-[data-theme="dark"] h6 {
+[data-dark-mode-supported="true"][data-theme="dark"] h1,
+[data-dark-mode-supported="true"][data-theme="dark"] h2,
+[data-dark-mode-supported="true"][data-theme="dark"] h3,
+[data-dark-mode-supported="true"][data-theme="dark"] h4,
+[data-dark-mode-supported="true"][data-theme="dark"] h5,
+[data-dark-mode-supported="true"][data-theme="dark"] h6 {
     color: var(--ilw-color--heading);
 }
 
 /* Heading links */ 
-[data-theme="dark"] h1 a, 
-[data-theme="dark"] h2 a, 
-[data-theme="dark"] h3 a, 
-[data-theme="dark"] h4 a, 
-[data-theme="dark"] h5 a, 
-[data-theme="dark"] h6 a {
+[data-dark-mode-supported="true"][data-theme="dark"] h1 a, 
+[data-dark-mode-supported="true"][data-theme="dark"] h2 a, 
+[data-dark-mode-supported="true"][data-theme="dark"] h3 a, 
+[data-dark-mode-supported="true"][data-theme="dark"] h4 a, 
+[data-dark-mode-supported="true"][data-theme="dark"] h5 a, 
+[data-dark-mode-supported="true"][data-theme="dark"] h6 a {
     color: var(--ilw-color--heading-link); 
 } 
 
-[data-theme="dark"] h1 a:hover, 
-[data-theme="dark"] h2 a:hover, 
-[data-theme="dark"] h3 a:hover, 
-[data-theme="dark"] h4 a:hover, 
-[data-theme="dark"] h5 a:hover, 
-[data-theme="dark"] h6 a:hover { 
+[data-dark-mode-supported="true"][data-theme="dark"] h1 a:hover, 
+[data-dark-mode-supported="true"][data-theme="dark"] h2 a:hover, 
+[data-dark-mode-supported="true"][data-theme="dark"] h3 a:hover, 
+[data-dark-mode-supported="true"][data-theme="dark"] h4 a:hover, 
+[data-dark-mode-supported="true"][data-theme="dark"] h5 a:hover, 
+[data-dark-mode-supported="true"][data-theme="dark"] h6 a:hover { 
     color: var(--ilw-color--heading-link-hover); 
 }
 
 /*========================================================= 
     FORM CONTROLS 
 ========================================================= */ 
-[data-theme="dark"] input, 
-[data-theme="dark"] select, 
-[data-theme="dark"] textarea { 
+[data-dark-mode-supported="true"][data-theme="dark"] input, 
+[data-dark-mode-supported="true"][data-theme="dark"] select, 
+[data-dark-mode-supported="true"][data-theme="dark"] textarea { 
     background-color: var(--ilw-color--control); 
     color: var(--ilw-color--control-text); 
     border-color: var(--ilw-color--border); 
 } 
 
-[data-theme="dark"] input::placeholder, 
-[data-theme="dark"] textarea::placeholder { 
+[data-dark-mode-supported="true"][data-theme="dark"] input::placeholder, 
+[data-dark-mode-supported="true"][data-theme="dark"] textarea::placeholder { 
     color: #b8b8b8; 
 }
 
-[data-theme="dark"] input:focus, 
-[data-theme="dark"] select:focus, 
-[data-theme="dark"] textarea:focus { 
+[data-dark-mode-supported="true"][data-theme="dark"] input:focus, 
+[data-dark-mode-supported="true"][data-theme="dark"] select:focus, 
+[data-dark-mode-supported="true"][data-theme="dark"] textarea:focus { 
     border-color: var(--ilw-color--control-accent); 
 }
 
 /* ========================================================= 
 TABLES 
 ========================================================= */ 
-[data-theme="dark"] table { 
+[data-dark-mode-supported="true"][data-theme="dark"] table { 
     color: var(--ilw-color--text); 
     background-color: var(--ilw-color--table-background); 
 }
 
-[data-theme="dark"] th { 
+[data-dark-mode-supported="true"][data-theme="dark"] th { 
     color: var(--ilw-color--table-head-color); 
     background-color: var(--ilw-color--table-head-background); 
 }
 
-[data-theme="dark"] td, 
-[data-theme="dark"] th { 
+[data-dark-mode-supported="true"][data-theme="dark"] td, 
+[data-dark-mode-supported="true"][data-theme="dark"] th { 
     border-color: var(--ilw-color--table-border); 
 } 
 
-[data-theme="dark"] tbody tr:nth-child(even) { 
+[data-dark-mode-supported="true"][data-theme="dark"] tbody tr:nth-child(even) { 
     background-color: var(--ilw-color--table-row-stripe); 
 }
 /* =========================================================
@@ -296,7 +296,7 @@ TABLES
    is a separate web component.
    ========================================================= */
 
-[data-theme="dark"] :is(ilw-header, header) {
+[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) {
     background-color: #000;
     border-bottom-color: var(--il-industrial);
 }
@@ -304,16 +304,16 @@ TABLES
 
 /* Search box inside Illinois header */
 
-[data-theme="dark"] :is(ilw-header, header) [role="search"] input {
+[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) [role="search"] input {
     background-color: #000 !important;
     color: #fff;
 }
 
-[data-theme="dark"] :is(ilw-header, header) [role="search"] input::placeholder {
+[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) [role="search"] input::placeholder {
     color: #fff;
 }
 
-[data-theme="dark"] :is(ilw-header, header) [role="search"] button {
+[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) [role="search"] button {
     background-color: #000 !important;
     color: #fff;
 }
@@ -323,7 +323,7 @@ TABLES
    ILLINOIS HEADER MENU
    ========================================================= */
 
-[data-theme="dark"] ilw-header-menu {
+[data-dark-mode-supported="true"][data-theme="dark"] ilw-header-menu {
     --ilw-header-menu--background: var(--il-blue-70);
     --ilw-header-menu--link-color: #fff;
     --ilw-header-menu--link-color--hover: var(--il-blue-70);
@@ -337,21 +337,21 @@ TABLES
    FOOTER
    ========================================================= */
 
-[data-theme="dark"] ilw-footer {
+[data-dark-mode-supported="true"][data-theme="dark"] ilw-footer {
     --il-blue: var(--il-blue-70);
 }
 
 /* ========================================================= 
     FOCUS 
    ========================================================= */
-[data-theme="dark"] :focus-visible { 
+[data-dark-mode-supported="true"][data-theme="dark"] :focus-visible { 
     outline-color: #759bd1; 
 } 
 
 /* ========================================================= 
     SELECTION 
   ========================================================= */ 
-[data-theme="dark"] ::selection { 
+[data-dark-mode-supported="true"][data-theme="dark"] ::selection { 
     background-color: #ff5f05; color: #13294b; 
 }
 
