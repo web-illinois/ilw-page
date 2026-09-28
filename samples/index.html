@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en" data-dark-mode-supported="true">
+<html lang="en" data-dark-mode-supported="false">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -31,7 +31,7 @@
       const darkModeSupported = rootElement.dataset.darkModeSupported === "true";
       if (!darkModeSupported) {
         // If dark mode is not supported, exit the function
-        //rootElement.dataset.theme = "light"; // Set the theme to light
+        rootElement.dataset.theme = "light"; // Set the theme to light
         return;
       } else {
         //Read the user's saved theme from the cookie
@@ -50,13 +50,11 @@
       /* ilw-page should listen for the event from the ilw-header.*/
       window.addEventListener("ilw-dark-mode-changed", (event) => {
 
-        alert("Dark mode changed event received: " + event.detail.enabled);
         //Only change the theme if dark mode is supported
         if (!darkModeSupported) {
           return;
         } 
         const enabled = event.detail.enabled;
-        alert("Dark mode changed: " + enabled);
         rootElement.dataset.theme = enabled ? "dark" : "light";
       });
     });

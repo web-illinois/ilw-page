@@ -105,28 +105,19 @@ https://gridlover.net/try
 
 ## Theme/Dark Mode
 
-The application supports theming to allow users to switch between light and dark modes when Dark Mode is enabled for the website.
+The application supports theming to allow users to switch between light and dark modes when Dark Mode is supported for the website.
 
 Theme configuration is controlled globally using data attributes applied at the root level of the document.
 
 Attributes include:
   
-* data-dark-mode-enabled – boolean, determines whether Dark Mode is available for the page
-  * true – Dark Mode is supported and the user can toggle between light and dark modes
-  * false – Dark Mode is not supported; the Dark Mode option is disabled and an informational message is displayed
+* data-dark-mode-supported – boolean, determines whether Dark Mode is supported for the page
+  * true – Dark Mode is supported and the user preference takes precedence on system/browser setup.
+  * false – Dark Mode is not supported
 
 * data-theme – string, defines the active theme for the page
   * light – default light mode
   * dark – dark mode
-
-If data-dark-mode-enabled is set to false, the Dark Mode checkbox is disabled and the user is informed that Dark Mode is not supported on the website.
-
-If no theme is explicitly set, the application defaults to light mode (or may follow system preferences if system theme support is implemented).
-
-User interaction through the Dark Mode checkbox updates the data-theme attribute dynamically when Dark Mode is enabled.
-
-The selected theme may be persisted (for example, using local storage) to maintain the user’s preference across sessions.
-
 
 Steps to define the rules to have modes:
 
@@ -137,12 +128,12 @@ Example:
 
 ```
 <!-- Dark Mode supported --> 
-<html data-dark-mode-enabled="true" data-theme="light"> 
+<html data-dark-mode-supported="true" data-theme="light"> 
 ```
 
 ```
 <!-- Dark Mode supported and currently enabled --> 
-<html data-dark-mode-enabled="true" data-theme="dark"> 
+<html data-dark-mode-supported="true" data-theme="dark"> 
 ```
 
 ```
@@ -166,32 +157,3 @@ Example:
   * The Dark Mode checkbox is disabled.
   * The application remains in Light Mode.
 
-### Persistence
-
-The selected theme may be stored in localStorage so the user's preference is maintained across browser sessions.
-
-localStorage is a simple way to save small pieces of data in the user's browser so the data remains available when the user returns.
-
-```
-localStorage.setItem("theme", "dark");
-```
-
-* Override behavior:
-  * User toggle overrides default
-* Persistence:
-  * Stored in localStorage (local storage - is a simple way to save small pieces of data in the users browser so it's still there the next time they come back.)
-
-Save the theme in javascript:
-
-```
-lovalStorage.setItem("theme", "dark");
-```
-
-Retrieve the saved theme in JavaScript:
-
-```
-const theme = localStorage.getItem("theme");
-
-```
-
-### Decide CSS strategy (WIP)
