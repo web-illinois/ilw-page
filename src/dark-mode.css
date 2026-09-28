@@ -16,22 +16,6 @@
 
 /* ---------- Illinois color definitions ---------- */
 :root {
-    --il-orange: #FF5F05;
-    --il-orange2: #FF5F05;
-
-    --il-blue-70: #13294B;
-    --il-blue-90: #11181D;
-
-    --il-industrial: #5E98E4;
-    --il-industrial-lighter-4: #759BD1;
-
-    --il-storm-10: #F4F4F4;
-    --il-storm-80: #474948;
-    --il-storm-95: #191919;
-
-    --il-arches-90: #C7EDF8;
-
-
     --ilw-color--background: var(--ilw-color--white--background); 
     --ilw-color--text: var(--ilw-color--white--text); 
     --ilw-color--border: var(--ilw-color--white--border); 
@@ -61,7 +45,7 @@ If the user has not explicitly selected a theme,
 follow the operating system/browser preference. 
 ========================================================= */ 
 @media (prefers-color-scheme: dark) { 
-    :root[data-dark-mode-supported="true"] { 
+    ilw-page[data-dark-mode-supported="true"] { 
         --ilw-color--background: var(--il-storm-95); 
         --ilw-color--text: var(--il-storm-10); 
         --ilw-color--border: var(--il-storm-80); 
@@ -94,7 +78,7 @@ follow the operating system/browser preference.
 /* =========================================================
   EXPLICIT LIGHT MODE
    ========================================================= */
-[data-theme="light"] {
+ilw-page[data-theme="light"] {
     --ilw-color--background: var(--ilw-color--white--background);
     --ilw-color--text: var(--ilw-color--white--text);
     --ilw-color--border: var(--ilw-color--white--border);
@@ -143,7 +127,7 @@ follow the operating system/browser preference.
    data-theme="dark" overrides the system preference.
    ========================================================= */
 
-[data-dark-mode-supported="true"][data-theme="dark"] {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] {
     --ilw-color--background: var(--il-storm-95);
     --ilw-color--text: var(--il-storm-10);
     --ilw-color--border: var(--il-storm-80);
@@ -169,9 +153,9 @@ follow the operating system/browser preference.
    PAGE
    ========================================================= */
 
-body {
+ilw-page {
     margin: 0;
-    /*font-family: Arial, sans-serif;*/
+    display: block;
 
     background: var(--background-color);
     color: var(--text-color);
@@ -191,90 +175,90 @@ body {
     color: var(--text-color);
 }
 
-[data-dark-mode-supported="true"][data-theme="dark"] a {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] a {
     color: var(--ilw-color--link);
 }
 
-[data-dark-mode-supported="true"][data-theme="dark"] a:hover {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] a:hover {
     color: var(--ilw-color--link-hover);
 }
 
-[data-dark-mode-supported="true"][data-theme="dark"] a:visited {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] a:visited {
     color: var(--ilw-color--link-visited);
 }
 
 /*========================================================= 
  HEADINGS 
 ========================================================= */
-[data-dark-mode-supported="true"][data-theme="dark"] h1,
-[data-dark-mode-supported="true"][data-theme="dark"] h2,
-[data-dark-mode-supported="true"][data-theme="dark"] h3,
-[data-dark-mode-supported="true"][data-theme="dark"] h4,
-[data-dark-mode-supported="true"][data-theme="dark"] h5,
-[data-dark-mode-supported="true"][data-theme="dark"] h6 {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h1,
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h2,
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h3,
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h4,
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h5,
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h6 {
     color: var(--ilw-color--heading);
 }
 
 /* Heading links */ 
-[data-dark-mode-supported="true"][data-theme="dark"] h1 a, 
-[data-dark-mode-supported="true"][data-theme="dark"] h2 a, 
-[data-dark-mode-supported="true"][data-theme="dark"] h3 a, 
-[data-dark-mode-supported="true"][data-theme="dark"] h4 a, 
-[data-dark-mode-supported="true"][data-theme="dark"] h5 a, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h1 a, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h2 a, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h3 a, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h4 a, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h5 a, 
 [data-dark-mode-supported="true"][data-theme="dark"] h6 a {
     color: var(--ilw-color--heading-link); 
 } 
 
-[data-dark-mode-supported="true"][data-theme="dark"] h1 a:hover, 
-[data-dark-mode-supported="true"][data-theme="dark"] h2 a:hover, 
-[data-dark-mode-supported="true"][data-theme="dark"] h3 a:hover, 
-[data-dark-mode-supported="true"][data-theme="dark"] h4 a:hover, 
-[data-dark-mode-supported="true"][data-theme="dark"] h5 a:hover, 
-[data-dark-mode-supported="true"][data-theme="dark"] h6 a:hover { 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h1 a:hover, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h2 a:hover, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h3 a:hover, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h4 a:hover, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h5 a:hover, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] h6 a:hover { 
     color: var(--ilw-color--heading-link-hover); 
 }
 
 /*========================================================= 
     FORM CONTROLS 
 ========================================================= */ 
-[data-dark-mode-supported="true"][data-theme="dark"] input, 
-[data-dark-mode-supported="true"][data-theme="dark"] select, 
-[data-dark-mode-supported="true"][data-theme="dark"] textarea { 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] input, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] select, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] textarea { 
     background-color: var(--ilw-color--control); 
     color: var(--ilw-color--control-text); 
     border-color: var(--ilw-color--border); 
 } 
 
-[data-dark-mode-supported="true"][data-theme="dark"] input::placeholder, 
-[data-dark-mode-supported="true"][data-theme="dark"] textarea::placeholder { 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] input::placeholder, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] textarea::placeholder { 
     color: #b8b8b8; 
 }
 
-[data-dark-mode-supported="true"][data-theme="dark"] input:focus, 
-[data-dark-mode-supported="true"][data-theme="dark"] select:focus, 
-[data-dark-mode-supported="true"][data-theme="dark"] textarea:focus { 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] input:focus, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] select:focus, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] textarea:focus { 
     border-color: var(--ilw-color--control-accent); 
 }
 
 /* ========================================================= 
 TABLES 
 ========================================================= */ 
-[data-dark-mode-supported="true"][data-theme="dark"] table { 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] table { 
     color: var(--ilw-color--text); 
     background-color: var(--ilw-color--table-background); 
 }
 
-[data-dark-mode-supported="true"][data-theme="dark"] th { 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] th { 
     color: var(--ilw-color--table-head-color); 
     background-color: var(--ilw-color--table-head-background); 
 }
 
-[data-dark-mode-supported="true"][data-theme="dark"] td, 
-[data-dark-mode-supported="true"][data-theme="dark"] th { 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] td, 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] th { 
     border-color: var(--ilw-color--table-border); 
 } 
 
-[data-dark-mode-supported="true"][data-theme="dark"] tbody tr:nth-child(even) { 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] tbody tr:nth-child(even) { 
     background-color: var(--ilw-color--table-row-stripe); 
 }
 /* =========================================================
@@ -296,7 +280,7 @@ TABLES
    is a separate web component.
    ========================================================= */
 
-[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) {
     background-color: #000;
     border-bottom-color: var(--il-industrial);
 }
@@ -304,16 +288,16 @@ TABLES
 
 /* Search box inside Illinois header */
 
-[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) [role="search"] input {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) [role="search"] input {
     background-color: #000 !important;
     color: #fff;
 }
 
-[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) [role="search"] input::placeholder {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) [role="search"] input::placeholder {
     color: #fff;
 }
 
-[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) [role="search"] button {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] :is(ilw-header, header) [role="search"] button {
     background-color: #000 !important;
     color: #fff;
 }
@@ -323,7 +307,7 @@ TABLES
    ILLINOIS HEADER MENU
    ========================================================= */
 
-[data-dark-mode-supported="true"][data-theme="dark"] ilw-header-menu {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] ilw-header-menu {
     --ilw-header-menu--background: var(--il-blue-70);
     --ilw-header-menu--link-color: #fff;
     --ilw-header-menu--link-color--hover: var(--il-blue-70);
@@ -337,21 +321,21 @@ TABLES
    FOOTER
    ========================================================= */
 
-[data-dark-mode-supported="true"][data-theme="dark"] ilw-footer {
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] ilw-footer {
     --il-blue: var(--il-blue-70);
 }
 
 /* ========================================================= 
     FOCUS 
    ========================================================= */
-[data-dark-mode-supported="true"][data-theme="dark"] :focus-visible { 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] :focus-visible { 
     outline-color: #759bd1; 
 } 
 
 /* ========================================================= 
     SELECTION 
   ========================================================= */ 
-[data-dark-mode-supported="true"][data-theme="dark"] ::selection { 
+ilw-page[data-dark-mode-supported="true"][data-theme="dark"] ::selection { 
     background-color: #ff5f05; color: #13294b; 
 }
 
