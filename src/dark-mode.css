@@ -170,11 +170,6 @@ ilw-page {
    DARK MODE PAGE ELEMENTS
    ========================================================= */
 
-[data-dark-mode-supported="true"][data-theme="dark"] body {
-    background: var(--background-color);
-    color: var(--text-color);
-}
-
 ilw-page[data-dark-mode-supported="true"][data-theme="dark"] a {
     color: var(--ilw-color--link);
 }
