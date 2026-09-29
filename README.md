@@ -54,6 +54,7 @@ Slots include
 -------------------------------------------------------------------------
 ```
 
+
 ## Contact Team
 
 jonker@illinois.edu
@@ -98,4 +99,61 @@ Note that this does not change the body tag. You may need to manually add styles
 
 https://www.nngroup.com/articles/golden-ratio-ui-design/
 https://gridlover.net/try
+
+
+
+
+## Theme/Dark Mode
+
+The application supports theming to allow users to switch between light and dark modes when Dark Mode is supported for the website.
+
+Theme configuration is controlled globally using data attributes applied at the root level of the document.
+
+Attributes include:
+  
+* data-dark-mode-supported – boolean, determines whether Dark Mode is supported for the page
+  * true – Dark Mode is supported and the user preference takes precedence on system/browser setup.
+  * false – Dark Mode is not supported
+
+* data-theme – string, defines the active theme for the page
+  * light – default light mode
+  * dark – dark mode
+
+Steps to define the rules to have modes:
+
+### Use theme attributes on root element.
+Theme availability and the active theme are controlled using data attributes applied at the root level.
+
+Example:
+
+```
+<!-- Dark Mode supported --> 
+<html data-dark-mode-supported="true" data-theme="light"> 
+```
+
+```
+<!-- Dark Mode supported and currently enabled --> 
+<html data-dark-mode-supported="true" data-theme="dark"> 
+```
+
+```
+<!-- Dark Mode not supported --> 
+<html data-dark-mode-enabled="false" data-theme="light"> 
+```
+
+### Define how Dark Mode works
+
+* Attribute name: data-dark-mode-enabled
+* Possible values: 
+  * true - Dark Mode is supported and the user can toggle between light and dark modes
+  * false - Dark Mode is not supported. The Dark Mode checkbox is disabled and an informational message is displayed
+
+### Theme override behaviour
+
+* When Dark Mode is enabled:
+  * User selection from the Dark Mode checkbox updates the data-theme attribute dynamically.
+  * The selected theme overrides the default theme preference.
+* When Dark Mode is disabled:
+  * The Dark Mode checkbox is disabled.
+  * The application remains in Light Mode.
 

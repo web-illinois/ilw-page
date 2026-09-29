@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-dark-mode-supported="false">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,14 +7,8 @@
   <link rel="stylesheet" href="https://cdn.brand.illinois.edu/illinois.css">
   <link rel="stylesheet" href="https://cdn.toolkit.illinois.edu/ilw-global/3/ilw-global.css">
   <script type="module" src="/src/ilw-page.ts"></script>
-  <style>
-    header {
-      background-color: #90EE90;
-    }
-    footer {
-      background-color: #FFB6C1;
-    }
-  </style>
+  <link rel="stylesheet" href="../src/dark-mode.css" />
+ 
   <script>
     let componentName = 'ilw-page';
     document.addEventListener("DOMContentLoaded", function(event) {
@@ -28,7 +22,56 @@
           }
         }
       });
+    
+      // BEGIN Dark/Light Mode functionality
+      // Read the user's saved theme from the cookie
+      const rootElement = document.documentElement;
+
+      //Check whether the site supports dark mode by checking the data attribute on the <html> element
+      const darkModeSupported = rootElement.dataset.darkModeSupported === "true";
+      if (!darkModeSupported) {
+        // If dark mode is not supported, exit the function
+        rootElement.dataset.theme = "light"; // Set the theme to light
+        return;
+      } else {
+        //Read the user's saved theme from the cookie
+        const userPreference = getDarkModeCookie();
+        if (userPreference) {
+          rootElement.dataset.theme = userPreference;
+        } else {
+          // If no userPreference, check the system preference
+          rootElement.dataset.theme = 
+            window.matchMedia("(prefers-color-scheme: dark)").matches 
+              ? "dark" 
+              : "light";
+        }
+      }
+
+      /* ilw-page should listen for the event from the ilw-header.*/
+      window.addEventListener("ilw-dark-mode-changed", (event) => {
+
+        //Only change the theme if dark mode is supported
+        if (!darkModeSupported) {
+          return;
+        } 
+        const enabled = event.detail.enabled;
+        rootElement.dataset.theme = enabled ? "dark" : "light";
+      });
     });
+
+    // Function to get the dark mode preference from the cookie
+    function getDarkModeCookie() {
+      const cookies = document.cookie.split("; ");
+      const darkModeCookie = cookies.find(cookie =>
+          cookie.startsWith("ilw-dark-mode=")
+      );
+      if (!darkModeCookie) {
+          return null; // No cookie found, return null
+      }
+      const value = darkModeCookie.split("=")[1];
+
+      return value === "true" ? "dark" : "light";
+    }
   </script>
 </head>
 
