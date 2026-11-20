@@ -23,6 +23,7 @@ Classes include
   * ilw-font - boolean, if the page uses the Illinois default fonts
   * ilw-format - boolean, if the page uses the Illinois default fonts and colors. 
   * ilw-margin - boolean, if the page uses the Illinois default margins. Note that this will prevent horizontal scrolling on the page. 
+  * ilw-sticky-sidebar - boolean, sets the sidebar to sticky. 
 
 `ilw-font` and `ilw-format` will change:
 
@@ -58,14 +59,6 @@ Slots include
 ## Contact Team
 
 jonker@illinois.edu
-
-## NPM Install
-
-None yet, still in alpha.
-
-## Files
-
-None yet, still in alpha.
 
 ## Code Examples
 

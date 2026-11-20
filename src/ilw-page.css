@@ -11,6 +11,10 @@ ilw-page.ilw-margin {
   overflow-y: hidden;
 }
 
+ilw-page.ilw-sticky-sidebar, ilw-page.ilw-sticky-sidebar main {
+  overflow: inherit;
+}
+
 ilw-page.ilw-font h1 {
   font-family: var(--il-font-heading);
 }
